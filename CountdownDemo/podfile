@@ -1,0 +1,7 @@
+platform:ios,'8.0'
+target 'CountdownDemo' do
+
+pod 'Masonry'
+pod 'XNUtils'
+
+end
