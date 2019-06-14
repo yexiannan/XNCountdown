@@ -71,13 +71,9 @@ static CGFloat const colonInset = 3.f;//冒号距离两边Label间距
     dispatch_source_set_event_handler(_timer, ^{
         if(time <= 0){ //倒计时结束，关闭
             dispatch_source_cancel(_timer);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self calculateHourMinuteAndSecondWithTimeInterval:time];
-            });
+            [self calculateHourMinuteAndSecondWithTimeInterval:time];
         }else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self calculateHourMinuteAndSecondWithTimeInterval:time];
-            });
+            [self calculateHourMinuteAndSecondWithTimeInterval:time];
             time--;
         }
     });
@@ -91,15 +87,17 @@ static CGFloat const colonInset = 3.f;//冒号距离两边Label间距
     NSInteger minutes = (int)(timeInterval-hours*3600)/60;
     NSInteger seconds = (int)(timeInterval - hours*3600 - minutes*60);
     
-    NSString *lastHourText = self.hourLabel.text;
-    
-    self.hourLabel.text = [NSString stringWithFormat:@"%@%ld",hours>9?@"":@"0",(long)hours];
-    self.minuteLabel.text = [NSString stringWithFormat:@"%@%ld",minutes>9?@"":@"0",(long)minutes];
-    self.secondLabel.text = [NSString stringWithFormat:@"%@%ld",seconds>9?@"":@"0",(long)seconds];
-
-    if (lastHourText.length != self.hourLabel.text.length) {
-        [self refreshLayout];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *lastHourText = self.hourLabel.text;
+        
+        self.hourLabel.text = [NSString stringWithFormat:@"%@%ld",hours>9?@"":@"0",(long)hours];
+        self.minuteLabel.text = [NSString stringWithFormat:@"%@%ld",minutes>9?@"":@"0",(long)minutes];
+        self.secondLabel.text = [NSString stringWithFormat:@"%@%ld",seconds>9?@"":@"0",(long)seconds];
+        
+        if (lastHourText.length != self.hourLabel.text.length) {
+            [self refreshLayout];
+        }
+    });
     
 }
 
