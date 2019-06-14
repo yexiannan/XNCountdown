@@ -1,6 +1,7 @@
 //
 //  XNCountDownView.h
 //  CountdownDemo
+//  https://github.com/yexiannan/XNCountdown.git
 //
 //  Created by Luigi on 2019/6/13.
 //  Copyright © 2019 Luigi. All rights reserved.

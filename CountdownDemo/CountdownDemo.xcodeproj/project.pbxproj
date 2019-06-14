@@ -48,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320496A322B3478800AAFD57 /* XNCountDownView */ = {
+			isa = PBXGroup;
+			children = (
+				3212E3FE22B2352800A9139A /* XNCountDownView.h */,
+				3212E3FF22B2352800A9139A /* XNCountDownView.m */,
+			);
+			path = XNCountDownView;
+			sourceTree = "<group>";
+		};
 		3212E39022B1E6E600A9139A = {
 			isa = PBXGroup;
 			children = (
@@ -69,8 +78,7 @@
 		3212E39B22B1E6E600A9139A /* CountdownDemo */ = {
 			isa = PBXGroup;
 			children = (
-				3212E3FE22B2352800A9139A /* XNCountDownView.h */,
-				3212E3FF22B2352800A9139A /* XNCountDownView.m */,
+				320496A322B3478800AAFD57 /* XNCountDownView */,
 				3212E39C22B1E6E600A9139A /* AppDelegate.h */,
 				3212E39D22B1E6E600A9139A /* AppDelegate.m */,
 				3212E39F22B1E6E600A9139A /* ViewController.h */,
