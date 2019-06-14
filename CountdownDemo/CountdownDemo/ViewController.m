@@ -28,6 +28,15 @@
         make.height.offset(view.viewSize.height);
     }];
     
+    XNCountDownView *graView = [[XNCountDownView alloc] initWithFont:BFont(15) TextColor:COLOR_WHITE ViewBackgroundColor:COLOR_WHITE GradientDirection:GradientDirection_LeftToRight BeginColor:cHEXCOLOR(#FF4444) EndColor:cHEXCOLOR(#FF6000)];
+    graView.countTime = 3606535;
+    [self.view addSubview:graView];
+    [graView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.view).offset(40);
+        make.centerX.equalTo(self.view);
+        make.width.offset(view.viewSize.width);
+        make.height.offset(view.viewSize.height);
+    }];
 }
 
 

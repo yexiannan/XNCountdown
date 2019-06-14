@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * textLabel背景渐变倒计时
  */
-- (instancetype)initWithFont:(UIFont *)font TextBackgroundColor:(UIColor *)textBackgroundColor ViewBackgroundColor:(UIColor *)viewBackgroundColor GradientDirection:(GradientDirection)direction BeginColor:(UIColor *)bColor EndColor:(UIColor *)eColor;
+- (instancetype)initWithFont:(UIFont *)font TextColor:(UIColor *)textColor ViewBackgroundColor:(UIColor *)viewBackgroundColor GradientDirection:(GradientDirection)direction BeginColor:(UIColor *)bColor EndColor:(UIColor *)eColor;
 
 @property(nonatomic) CGSize viewSize;
 @property (nonatomic, copy) NSDate *deadline;//截止时间
