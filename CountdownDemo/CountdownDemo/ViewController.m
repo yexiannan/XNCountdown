@@ -33,9 +33,9 @@
     [self.view addSubview:graView];
     [graView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.view).offset(40);
-        make.centerX.equalTo(self.view);
-        make.width.offset(view.viewSize.width);
-        make.height.offset(view.viewSize.height);
+        make.centerX.equalTo(view);
+        make.width.offset(graView.viewSize.width);
+        make.height.offset(graView.viewSize.height);
     }];
 }
 

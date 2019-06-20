@@ -1,7 +1,6 @@
 //
 //  XNCountDownView.m
 //  CountdownDemo
-//  https://github.com/yexiannan/XNCountdown.git
 //
 //  Created by Luigi on 2019/6/13.
 //  Copyright © 2019 Luigi. All rights reserved.
@@ -50,15 +49,30 @@ static CGFloat const colonInset = 3.f;//冒号距离两边Label间距
 #pragma mark - SetData
 - (void)setCountTime:(NSTimeInterval)countTime{
     _countTime = countTime;
-    [self openCountdownWithTime:countTime];
+    if (countTime > 0) {
+        [self refreshDataWithTimeInterval:countTime];
+        [self openCountdownWithTime:countTime];
+    }
 }
 
 - (void)setDeadline:(NSDate *)deadline{
     _deadline = deadline;
     if ([deadline isInFuture]) {
-        NSTimeInterval timeInterval = [[NSDate date] secondsAfterDate:deadline];
+        NSTimeInterval timeInterval = [[NSDate date] secondsBeforeDate:deadline];
+        [self refreshDataWithTimeInterval:timeInterval];
         [self openCountdownWithTime:timeInterval];
     }
+}
+
+- (void)refreshDataWithTimeInterval:(NSTimeInterval)timeInterval{
+    NSInteger hours = (int)(timeInterval/3600);
+    NSInteger minutes = (int)(timeInterval-hours*3600)/60;
+    NSInteger seconds = (int)(timeInterval - hours*3600 - minutes*60);
+    
+    self.hourLabel.text = [NSString stringWithFormat:@"%@%ld",hours>9?@"":@"0",(long)hours];
+    self.minuteLabel.text = [NSString stringWithFormat:@"%@%ld",minutes>9?@"":@"0",(long)minutes];
+    self.secondLabel.text = [NSString stringWithFormat:@"%@%ld",seconds>9?@"":@"0",(long)seconds];
+    [self refreshLayout];
 }
 
 #pragma mark - Action
@@ -93,14 +107,13 @@ static CGFloat const colonInset = 3.f;//冒号距离两边Label间距
         self.hourLabel.text = [NSString stringWithFormat:@"%@%ld",hours>9?@"":@"0",(long)hours];
         self.minuteLabel.text = [NSString stringWithFormat:@"%@%ld",minutes>9?@"":@"0",(long)minutes];
         self.secondLabel.text = [NSString stringWithFormat:@"%@%ld",seconds>9?@"":@"0",(long)seconds];
-        
+
         if (lastHourText.length != self.hourLabel.text.length) {
             [self refreshLayout];
         }
     });
     
 }
-
 
 #pragma mark - LayoutUI
 - (void)createGradientLayerWithGradientDirection:(GradientDirection)direction BeginColor:(UIColor *)bColor EndColor:(UIColor *)eColor{
@@ -164,8 +177,10 @@ static CGFloat const colonInset = 3.f;//冒号距离两边Label间距
     [self.separatorLabel1 sizeToFit];
     [self.separatorLabel2 sizeToFit];
     
+    [self layoutIfNeeded];
+    
     CGFloat width,height;
-    width = labelInset*2+self.hourLabel.width+self.minuteLabel.width+self.secondLabel.width+(colonInset*2+self.separatorLabel1.width)*2;
+    width = labelInset+textInset*2+self.hourLabel.width+colonInset*2+self.separatorLabel1.width+textInset*2+self.minuteLabel.width+colonInset*2+self.separatorLabel2.width+textInset*2+self.secondLabel.width+labelInset;
     height = labelInset*2 + textInset*2 + self.hourLabel.height;
     self.viewSize = CGSizeMake(width, height);
     
@@ -227,10 +242,9 @@ static CGFloat const colonInset = 3.f;//冒号距离两边Label间距
     }];
     
     CGFloat width,height;
-    width = labelInset*2+self.hourLabel.width+self.minuteLabel.width+self.secondLabel.width+(colonInset*2+self.separatorLabel1.width)*2;
+    width = labelInset+textInset*2+self.hourLabel.width+colonInset*2+self.separatorLabel1.width+textInset*2+self.minuteLabel.width+colonInset*2+self.separatorLabel2.width+textInset*2+self.secondLabel.width+labelInset;
     height = labelInset*2 + textInset*2 + self.hourLabel.height;
     self.viewSize = CGSizeMake(width, height);
-    
     [self updateConstraints];
 }
 
@@ -240,6 +254,8 @@ static CGFloat const colonInset = 3.f;//冒号距离两边Label间距
     [self.hourView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.offset(textInset*2+self.hourLabel.width);
     }];
+    
+    self.hourLabel.frame = CGRectMake(0, 0, textInset*2+self.hourLabel.width, textInset*2+self.hourLabel.height);
     
 }
 
