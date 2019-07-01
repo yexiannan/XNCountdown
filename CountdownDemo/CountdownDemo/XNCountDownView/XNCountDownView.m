@@ -101,17 +101,17 @@ static CGFloat const colonInset = 3.f;//冒号距离两边Label间距
     NSInteger minutes = (int)(timeInterval-hours*3600)/60;
     NSInteger seconds = (int)(timeInterval - hours*3600 - minutes*60);
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         NSString *lastHourText = self.hourLabel.text;
         
         self.hourLabel.text = [NSString stringWithFormat:@"%@%ld",hours>9?@"":@"0",(long)hours];
         self.minuteLabel.text = [NSString stringWithFormat:@"%@%ld",minutes>9?@"":@"0",(long)minutes];
         self.secondLabel.text = [NSString stringWithFormat:@"%@%ld",seconds>9?@"":@"0",(long)seconds];
-
+        
         if (lastHourText.length != self.hourLabel.text.length) {
             [self refreshLayout];
         }
-    });
+    }];
     
 }
 

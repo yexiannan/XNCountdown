@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithFont:(UIFont *)font TextColor:(UIColor *)textColor ViewBackgroundColor:(UIColor *)viewBackgroundColor GradientDirection:(GradientDirection)direction BeginColor:(UIColor *)bColor EndColor:(UIColor *)eColor;
 
-@property(nonatomic) CGSize viewSize;
+@property (nonatomic) CGSize viewSize;
 @property (nonatomic, copy) NSDate *deadline;//截止时间
 @property (nonatomic, assign) NSTimeInterval countTime;//倒计时时长
 @end
