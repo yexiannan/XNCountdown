@@ -1,0 +1,6 @@
+framework module XNCountdown {
+  umbrella header "XNCountdown-umbrella.h"
+
+  export *
+  module * { export * }
+}

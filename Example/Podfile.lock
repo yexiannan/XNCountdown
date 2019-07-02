@@ -1,0 +1,27 @@
+PODS:
+  - Masonry (1.1.0)
+  - XNCountdown (0.1.0):
+    - Masonry
+    - XNUtils (~> 0.1.12)
+  - XNUtils (0.1.12)
+
+DEPENDENCIES:
+  - XNCountdown (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - XNUtils
+
+EXTERNAL SOURCES:
+  XNCountdown:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  XNCountdown: 2060afb696c7a5384ab2a99ad73bb2b0b8888d9b
+  XNUtils: 130543f9daf036f637d4d20eb0f98768c7ac9fec
+
+PODFILE CHECKSUM: 2cb72db6cfd8b8e243898659fc552f20efb4bcf7
+
+COCOAPODS: 1.7.1

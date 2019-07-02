@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'XNCountdown_Example' do
+  pod 'XNCountdown', :path => '../'
+
+  target 'XNCountdown_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
