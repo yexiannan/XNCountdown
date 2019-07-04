@@ -7,7 +7,6 @@
 //
 
 #import "XNCountDownView.h"
-#import "Masonry.h"
 
 static CGFloat const labelInset = 5.f;//Label距离View边距
 static CGFloat const textInset = 4.f;//文字距离Label边距

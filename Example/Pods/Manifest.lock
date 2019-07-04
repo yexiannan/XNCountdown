@@ -1,6 +1,6 @@
 PODS:
   - Masonry (1.1.0)
-  - XNCountdown (0.1.0):
+  - XNCountdown (0.1.1):
     - Masonry
     - XNUtils (~> 0.1.12)
   - XNUtils (0.1.12)
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  XNCountdown: 663abf190a64e9fec0c595a3839066d06d1284db
+  XNCountdown: a8a1ebb34393265a43cc1b0b3869793ed5ae3288
   XNUtils: 130543f9daf036f637d4d20eb0f98768c7ac9fec
 
 PODFILE CHECKSUM: 2cb72db6cfd8b8e243898659fc552f20efb4bcf7

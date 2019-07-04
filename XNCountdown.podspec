@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XNCountdown'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of XNCountdown.'
 
 # This description is used to generate tags and improve search results.
@@ -37,10 +37,10 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-   s.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
-
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'XNUtils', '~> 0.1.12'
   s.dependency 'Masonry'
+  s.prefix_header_contents = '#import "Masonry.h"','#import "XNMacro.h"'
+  s.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
 
 end
