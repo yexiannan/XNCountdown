@@ -8,7 +8,7 @@
 
 #import "UIView+XNView.h"
 #import <objc/runtime.h>
-#import "XNMacro.h"
+#import "XNUtils.h"
 
 //key for associative methods during runtime
 static char badgeNotificationPathArrayKey;

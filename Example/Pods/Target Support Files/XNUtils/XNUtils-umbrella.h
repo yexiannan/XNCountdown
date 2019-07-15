@@ -24,9 +24,9 @@
 #import "UILabel+XNLabel.h"
 #import "UIView+XNView.h"
 #import "UIView+YYAdd.h"
-#import "XNMacro.h"
 #import "Reachability.h"
 #import "XNSystemHelper.h"
+#import "XNUtils.h"
 
 FOUNDATION_EXPORT double XNUtilsVersionNumber;
 FOUNDATION_EXPORT const unsigned char XNUtilsVersionString[];

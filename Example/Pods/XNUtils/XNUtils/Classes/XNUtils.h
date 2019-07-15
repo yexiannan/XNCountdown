@@ -1,13 +1,12 @@
 //
-//  XNMacro.h
+//  XNUtils.h
 //  XNUtils
 //
-//  Created by Luigi on 2019/5/30.
-//  Copyright © 2019 Luigi. All rights reserved.
+//  Created by Luigi on 2019/7/15.
 //
 
-#ifndef XNMacro_h
-#define XNMacro_h
+#ifndef XNUtils_h
+#define XNUtils_h
 
 #import "NSArray+XNArray.h"
 #import "NSDate+XNDate.h"
@@ -23,6 +22,7 @@
 #import "UIImage+XNImage.h"
 #import "UILabel+XNLabel.h"
 #import "XNButton.h"
+#import "XNSystemHelper.h"
 
 //---------------------------Log打印时间戳与日志所在文件位置---------------------------
 #ifdef DEBUG
@@ -92,4 +92,5 @@ _Pragma("clang diagnostic pop")
 //取消ScrollView布局自动缩进
 #define AdjustsScrollViewInsetNever(controller,view) if(@available(iOS 11.0, *)) {view.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;} else if([controller isKindOfClass:[UIViewController class]]) {controller.automaticallyAdjustsScrollViewInsets = false;}
 
-#endif /* XNMacro_h */
+
+#endif /* XNUtils_h */

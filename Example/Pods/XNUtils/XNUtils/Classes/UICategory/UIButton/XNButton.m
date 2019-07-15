@@ -76,6 +76,12 @@
                 titleFrame = CGRectSetX(titleFrame, self.contentEdgeInsets.left + self.titleEdgeInsets.left);
                 titleFrame = CGRectSetWidth(titleFrame, titleLimitSize.width);
                 break;
+            case UIControlContentHorizontalAlignmentLeading:
+                
+                break;
+            case UIControlContentHorizontalAlignmentTrailing:
+                
+                break;
         }
         
         if (self.buttonImagePosition == XNButtonImagePosition_Top) {//重置Y坐标
@@ -164,6 +170,12 @@
                 imageFrame = CGRectSetX(imageFrame, CGRectGetWidth(self.bounds) - self.contentEdgeInsets.right - self.imageEdgeInsets.right - CGRectGetWidth(imageFrame));
                 titleFrame = CGRectSetX(titleFrame, self.contentEdgeInsets.left + self.titleEdgeInsets.left);
                 titleFrame = CGRectSetWidth(titleFrame, CGRectGetMinX(imageFrame) - self.imageEdgeInsets.left - self.titleEdgeInsets.right - CGRectGetMinX(titleFrame));
+                break;
+            case UIControlContentHorizontalAlignmentLeading:
+                
+                break;
+            case UIControlContentHorizontalAlignmentTrailing:
+                
                 break;
         }
         

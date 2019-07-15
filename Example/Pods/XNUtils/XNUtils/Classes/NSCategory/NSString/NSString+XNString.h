@@ -32,6 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  输入字符串,字体大小,限制宽度 得出高度
  */
 + (CGSize)getSizeWithString:(NSString *)aStr withFont:(UIFont *)font LimitWidth:(CGFloat)aLimitWidth;
+/**
+ * 转换为md5字符串
+ */
+- (NSString *)md5String;
 @end
 
 NS_ASSUME_NONNULL_END

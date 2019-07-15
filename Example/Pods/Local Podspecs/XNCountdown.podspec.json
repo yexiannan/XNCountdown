@@ -21,7 +21,7 @@
   "source_files": "XNCountdown/Classes/**/*",
   "dependencies": {
     "XNUtils": [
-
+      "~> 0.2.0"
     ],
     "Masonry": [
 
