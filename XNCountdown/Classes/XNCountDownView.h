@@ -8,7 +8,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XNMacro.h"
+#import "XNUtils.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
