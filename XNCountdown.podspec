@@ -38,7 +38,7 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'XNUtils'
+  s.dependency 'XNUtils', '~> 0.2.0'
   s.dependency 'Masonry'
   s.prefix_header_contents = '#import "Masonry.h"','#import "XNUtils.h"'
   s.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
